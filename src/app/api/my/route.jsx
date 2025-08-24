@@ -1,13 +1,9 @@
-// 1. new Response() = low-level, more control, but you must handle headers & stringifying.
+import React from 'react'
 
-// 2. NextResponse.json() = high-level, made for Next.js APIs, automatically formats JSON responses.
+const APis = () => {
+  return (
+    <div>APis</div>
+  )
+}
 
-import { NextResponse } from "next/server"
-
-// export async function GET(request){
-//     return new Response("Hello Api Route")
-// };
-
-export const GET = (request) => {
-    return NextResponse.json({name:'Irfan Ullah', age: 24, department: 'IT'})
-};
+export default APis
