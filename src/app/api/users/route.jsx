@@ -1,5 +1,8 @@
 import { NextResponse } from "next/server";
 
+
+
+// post the use data
 export const POST = async(req,res) =>{
 
     let data = await req.json();
@@ -16,4 +19,4 @@ export const POST = async(req,res) =>{
     }
     
 
-}
+};
