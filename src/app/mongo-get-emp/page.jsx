@@ -1,6 +1,8 @@
+import Link from "next/link";
+
 const getData = async () =>{
 
-    const response = await fetch("http://localhost:3000/api/db-emp");
+    const response = await fetch("http://localhost:3000/api/db-emp", {'cache': 'no-store'});
     const data = await response.json();
     // console.log(data.result);
     if(data.success){
@@ -35,7 +37,7 @@ const GetEmployee = async () => {
                         <td> {item.name} </td>
                         <td> {item.salary} </td>
                         <td> {item.department} </td>
-                        
+                        <Link href={`/mongo-get-emp/${item._id}`}>Edit</Link>
                     </tr>
                 ))
             }

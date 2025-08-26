@@ -1,9 +1,11 @@
-const { mongoose } = require("mongoose");
+import mongoose from "mongoose";
 
-const employeeModel = new mongoose.Schema({
-    name: String,
-    salary: String,
-    department: String
-});
+const employeeSchema = new mongoose.Schema({
+  name: String,
+  department: String,
+  salary: Number,
+}, { timestamps: true });
 
-export const Employee = mongoose.model.employees || mongoose.model("Employee", employeeModel);
+// ✅ check mongoose.models to avoid overwrite
+export const Employee =
+  mongoose.models.Employee || mongoose.model("Employee", employeeSchema);
