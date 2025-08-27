@@ -42,7 +42,18 @@ export const GET = async (req,{params}) =>{
 
     return NextResponse.json({result, success: true});
 
+}
 
-    
+
+export const DELETE = async (req,{params}) =>{
+
+    const {empid} = params;
+    const id = {'_id': empid};
+
+    await mongoose.connect(connectionString);
+
+    const deleteEmployee = await Employee.deleteOne(id);
+
+    return NextResponse.json({success: true});
 
 }

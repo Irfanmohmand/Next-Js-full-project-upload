@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Delete from "../components/Delete";
 
 const getData = async () =>{
 
@@ -28,6 +29,7 @@ const GetEmployee = async () => {
                     <td>Name</td>
                     <td>Salary</td>
                     <td>Department</td>
+                    <td>Actions</td>
                 </tr>
             </thead>
             <tbody>
@@ -37,7 +39,8 @@ const GetEmployee = async () => {
                         <td> {item.name} </td>
                         <td> {item.salary} </td>
                         <td> {item.department} </td>
-                        <Link href={`/mongo-get-emp/${item._id}`}>Edit</Link>
+                        <td><Link href={`/mongo-get-emp/${item._id}`}>Edit</Link></td>
+                        <td> <Delete id={item._id} /> </td>
                     </tr>
                 ))
             }
