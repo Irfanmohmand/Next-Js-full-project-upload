@@ -4,6 +4,8 @@ import path from "path";
 
 export const POST = async (req) => {
   const data = await req.formData();
+
+  // < type="file" /> this is the file on input
   const file = data.get("file");
 
   if (!file) {
