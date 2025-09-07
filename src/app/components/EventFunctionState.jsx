@@ -1,12 +1,12 @@
-"use client"
-import React, { useState } from 'react';
-
+"use client";
+import React, { useState } from "react";
+import Link from "next/link";
 
 function EventFunctionState() {
-  const [name, setName] = useState("Irfan")
+  const [name, setName] = useState("Irfan");
   // let username = 'irfan'
-  const changeName = () =>{
-    setName("zaid")
+  const changeName = () => {
+    setName("zaid");
   };
 
   return (
@@ -15,8 +15,9 @@ function EventFunctionState() {
       {/* <button onClick={changeName}>Change Name</button> */}
       <h1> Change the name: {name} </h1>
       <button onClick={() => changeName()}>Change Name</button>
+      <Link href={"/upload-image"}>Upload Image</Link>
     </div>
-  )
+  );
 }
 
-export default EventFunctionState
+export default EventFunctionState;
