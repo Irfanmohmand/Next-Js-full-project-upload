@@ -1,11 +1,11 @@
-import { connectionString } from "@/lib/database/db-connection";
+import { connectDB } from "@/lib/database/db-connection";
 import { Image } from "@/lib/database/model/image";
 import mongoose from "mongoose";
 import { NextResponse } from "next/server";
 
 export const GET = async () => {
   try {
-    await mongoose.connect(connectionString);
+    await connectDB();
 
     const images = await Image.find().select("name data contentType");
 

@@ -1,4 +1,4 @@
-import { connectionString } from "@/lib/database/db-connection";
+import { connectDB } from "@/lib/database/db-connection";
 import { writeFile } from "fs/promises"; // spelling bhi galat tha: "wrtiteFile"
 import path from "path";
 import mongoose from "mongoose";
@@ -7,7 +7,7 @@ import { Image } from "@/lib/database/model/image";
 
 export const POST = async (request) => {
   try {
-    await mongoose.connect(connectionString);
+    await connectDB();
 
     // 👇 yahan await lagana zaroori hai
     const data = await request.formData();
