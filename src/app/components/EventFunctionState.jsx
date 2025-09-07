@@ -15,7 +15,22 @@ function EventFunctionState() {
       {/* <button onClick={changeName}>Change Name</button> */}
       <h1> Change the name: {name} </h1>
       <button onClick={() => changeName()}>Change Name</button>
-      <Link href={"/upload-image"}>Upload Image</Link>
+      <Link
+        href={"/upload-image"}
+        style={{
+          backgroundColor: "blue",
+          color: "white",
+          paddingTop: "6px",
+          paddingBottom: "6px",
+          paddingLeft: "8px",
+          paddingRight: "8px",
+          borderRadius: "20px",
+          marginLeft: "4px",
+          fontWeight: "bold",
+        }}
+      >
+        Upload Image
+      </Link>
     </div>
   );
 }
